@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rocket Club Tycoon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="backdrop"></div>
+    <main class="app-shell">
+      <section class="hero panel">
+        <div>
+          <p class="eyebrow">Prototype prive</p>
+          <h1>Rocket Club Tycoon</h1>
+          <p class="hero-copy">
+            Monte une structure Rocket League depuis un roster de potes jusqu'aux Worlds.
+            Gère la semaine, recrute malin, et vis des matchs commentes comme un dimanche de finale.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <button id="advance-week" class="primary">Jouer la semaine</button>
+          <button id="toggle-audio" class="secondary">Activer l'ambiance</button>
+        </div>
+      </section>
+
+      <section class="top-grid">
+        <article class="panel spotlight">
+          <div class="panel-title-row">
+            <h2>Saison</h2>
+            <span id="phase-badge" class="badge">Open Qualifier</span>
+          </div>
+          <div class="season-stats">
+            <div>
+              <span class="label">Semaine</span>
+              <strong id="week-label">1</strong>
+            </div>
+            <div>
+              <span class="label">Cash</span>
+              <strong id="cash-label">0 €</strong>
+            </div>
+            <div>
+              <span class="label">Reputation</span>
+              <strong id="rep-label">0</strong>
+            </div>
+            <div>
+              <span class="label">Fans</span>
+              <strong id="fans-label">0</strong>
+            </div>
+          </div>
+          <div class="team-meters">
+            <div>
+              <span>Moral</span>
+              <div class="meter"><i id="morale-meter"></i></div>
+            </div>
+            <div>
+              <span>Synergie</span>
+              <div class="meter"><i id="synergy-meter"></i></div>
+            </div>
+            <div>
+              <span>Fatigue</span>
+              <div class="meter danger"><i id="fatigue-meter"></i></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title-row">
+            <h2>Planning</h2>
+            <span class="badge muted">1 action / semaine</span>
+          </div>
+          <div id="activity-list" class="activity-list"></div>
+        </article>
+      </section>
+
+      <section class="mid-grid">
+        <article class="panel">
+          <div class="panel-title-row">
+            <h2>Roster titulaire</h2>
+            <span class="badge muted">3v3 only</span>
+          </div>
+          <div id="roster-list" class="roster-list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title-row">
+            <h2>Marche</h2>
+            <span class="badge">Top joueurs + prospects</span>
+          </div>
+          <div id="market-list" class="market-list"></div>
+        </article>
+      </section>
+
+      <section class="bottom-grid">
+        <article class="panel commentary-panel">
+          <div class="panel-title-row">
+            <h2>Live match</h2>
+            <span id="match-status" class="badge danger">En attente</span>
+          </div>
+          <div id="scoreboard" class="scoreboard">
+            <div>
+              <span class="team-tag">Vous</span>
+              <strong id="home-score">0</strong>
+            </div>
+            <div class="score-separator">:</div>
+            <div>
+              <span class="team-tag" id="away-name">Rivals</span>
+              <strong id="away-score">0</strong>
+            </div>
+          </div>
+          <div id="commentary-feed" class="commentary-feed"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title-row">
+            <h2>Classement du circuit</h2>
+            <span class="badge muted">Points saison</span>
+          </div>
+          <div id="standings-list" class="standings-list"></div>
+        </article>
+      </section>
+    </main>
+
+    <template id="commentary-item-template">
+      <div class="commentary-item">
+        <span class="minute"></span>
+        <p></p>
+      </div>
+    </template>
+
+    <script src="./game.js"></script>
+  </body>
+</html>
