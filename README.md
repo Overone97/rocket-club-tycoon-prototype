@@ -1,15 +1,15 @@
 # Rocket Club Tycoon
 
-Prototype web local d'un manager Rocket League inspire par la boucle de progression de *Game Dev Tycoon*.
+Prototype web local d'un manager Rocket League narratif inspire par la boucle de progression de *Game Dev Tycoon*.
 
 ## Ce qu'il y a deja
 
-- boucle semaine -> preparation -> match -> recompenses
-- roster 3v3 avec stats lisibles
-- marche avec vrais gros noms + prospects fictifs
-- commentaires dynamiques pendant les matchs
-- ambience audio tres legere via Web Audio API
-- classement saisonnier et progression de phase
+- une seule scene principale centree sur le lieu de vie de l'equipe
+- 3 choix maximum par semaine
+- progression narrative du garage vers une vraie structure
+- petite chronique textuelle des moments importants
+- roster visible en scene avec ton personnage principal
+- sauvegarde locale automatique + nouvelle partie
 
 ## Lancer
 
@@ -26,8 +26,7 @@ Puis visite `http://localhost:4173`.
 
 ## Suite logique
 
-- vraies fiches joueurs externes en JSON
-- contrats, salaires hebdo, remplaçant, coach
-- format tournoi plus propre
-- vrai systeme de highlights avec cartes d'actions
-- sauvegarde locale
+- vrai personnage principal avec job, fatigue et dialogues
+- matchs plus mis en scene ou semi-jouables
+- evolution visuelle encore plus forte des lieux
+- contrats, salaires et petits drames d'equipe

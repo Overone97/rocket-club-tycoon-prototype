@@ -17,121 +17,155 @@
     <main class="app-shell">
       <section class="hero panel">
         <div>
-          <p class="eyebrow">Prototype prive</p>
+          <p class="eyebrow">Prototype narratif</p>
           <h1>Rocket Club Tycoon</h1>
           <p class="hero-copy">
-            Monte une structure Rocket League depuis un roster de potes jusqu'aux Worlds.
-            Gère la semaine, recrute malin, et vis des matchs commentes comme un dimanche de finale.
+            Tu montes une equipe depuis un vieux garage. Tu bosses la journee, tu finances les setups,
+            et chaque semaine tu choisis juste l'essentiel.
           </p>
         </div>
         <div class="hero-actions">
-          <button id="advance-week" class="primary">Jouer la semaine</button>
-          <button id="toggle-audio" class="secondary">Activer l'ambiance</button>
+          <button id="play-week" class="primary">Jouer la semaine</button>
+          <button id="reset-save" class="secondary ghost">Nouvelle partie</button>
         </div>
       </section>
 
-      <section class="top-grid">
-        <article class="panel spotlight">
-          <div class="panel-title-row">
-            <h2>Saison</h2>
-            <span id="phase-badge" class="badge">Open Qualifier</span>
-          </div>
-          <div class="season-stats">
-            <div>
-              <span class="label">Semaine</span>
-              <strong id="week-label">1</strong>
-            </div>
-            <div>
-              <span class="label">Cash</span>
-              <strong id="cash-label">0 €</strong>
-            </div>
-            <div>
-              <span class="label">Reputation</span>
-              <strong id="rep-label">0</strong>
-            </div>
-            <div>
-              <span class="label">Fans</span>
-              <strong id="fans-label">0</strong>
-            </div>
-          </div>
-          <div class="team-meters">
-            <div>
-              <span>Moral</span>
-              <div class="meter"><i id="morale-meter"></i></div>
-            </div>
-            <div>
-              <span>Synergie</span>
-              <div class="meter"><i id="synergy-meter"></i></div>
-            </div>
-            <div>
-              <span>Fatigue</span>
-              <div class="meter danger"><i id="fatigue-meter"></i></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="panel">
-          <div class="panel-title-row">
-            <h2>Planning</h2>
-            <span class="badge muted">1 action / semaine</span>
-          </div>
-          <div id="activity-list" class="activity-list"></div>
-        </article>
+      <section class="save-strip panel">
+        <div>
+          <p class="eyebrow">Sauvegarde locale</p>
+          <strong id="save-status">Aucune sauvegarde pour l'instant</strong>
+        </div>
+        <p class="save-copy">La progression reste en memoire sur cet appareil.</p>
       </section>
 
-      <section class="mid-grid">
-        <article class="panel">
-          <div class="panel-title-row">
-            <h2>Roster titulaire</h2>
-            <span class="badge muted">3v3 only</span>
-          </div>
-          <div id="roster-list" class="roster-list"></div>
-        </article>
-
-        <article class="panel">
-          <div class="panel-title-row">
-            <h2>Marche</h2>
-            <span class="badge">Top joueurs + prospects</span>
-          </div>
-          <div id="market-list" class="market-list"></div>
-        </article>
-      </section>
-
-      <section class="bottom-grid">
-        <article class="panel commentary-panel">
-          <div class="panel-title-row">
-            <h2>Live match</h2>
-            <span id="match-status" class="badge danger">En attente</span>
-          </div>
-          <div id="scoreboard" class="scoreboard">
+      <section class="story-layout">
+        <article class="scene-panel panel">
+          <div class="panel-topline">
             <div>
-              <span class="team-tag">Vous</span>
-              <strong id="home-score">0</strong>
+              <p class="eyebrow" id="chapter-label">Chapitre 1</p>
+              <h2 id="location-title">Le vieux garage</h2>
             </div>
-            <div class="score-separator">:</div>
-            <div>
-              <span class="team-tag" id="away-name">Rivals</span>
-              <strong id="away-score">0</strong>
+            <span id="week-pill" class="badge">Semaine 1</span>
+          </div>
+
+          <div class="scene-stage">
+            <div class="scene-room" id="scene-room" data-stage="garage">
+              <div class="room-light"></div>
+              <div class="room-poster"></div>
+              <div class="room-desk desk-main">
+                <span class="screen"></span>
+                <span class="keyboard"></span>
+              </div>
+              <div class="room-desk desk-side">
+                <span class="screen"></span>
+                <span class="keyboard"></span>
+              </div>
+              <div class="room-desk desk-back">
+                <span class="screen"></span>
+                <span class="keyboard"></span>
+              </div>
+              <div class="coach-corner">
+                <div class="mug"></div>
+                <div class="laptop"></div>
+              </div>
+              <div class="character manager">
+                <span class="head"></span>
+                <span class="body"></span>
+                <em id="manager-caption">Tu sors du taf et tu comptes tes billets.</em>
+              </div>
+              <div class="character player player-a">
+                <span class="head"></span>
+                <span class="body"></span>
+              </div>
+              <div class="character player player-b">
+                <span class="head"></span>
+                <span class="body"></span>
+              </div>
+              <div class="character player player-c">
+                <span class="head"></span>
+                <span class="body"></span>
+              </div>
             </div>
           </div>
-          <div id="commentary-feed" class="commentary-feed"></div>
+
+          <div class="scene-copy">
+            <p id="scene-text">
+              Trois PC fatigues, un plafond bas, et une odeur de pizza froide. C'est moche, mais c'est a vous.
+            </p>
+          </div>
+
+          <div class="team-strip" id="team-strip"></div>
         </article>
 
-        <article class="panel">
-          <div class="panel-title-row">
-            <h2>Classement du circuit</h2>
-            <span class="badge muted">Points saison</span>
-          </div>
-          <div id="standings-list" class="standings-list"></div>
-        </article>
+        <aside class="side-column">
+          <article class="panel summary-panel">
+            <div class="panel-topline">
+              <div>
+                <p class="eyebrow">Le projet</p>
+                <h2 id="club-name">Garage Rocket Club</h2>
+              </div>
+            </div>
+
+            <div class="story-stats">
+              <div class="story-stat">
+                <span class="label">Cash</span>
+                <strong id="cash-label">0 €</strong>
+              </div>
+              <div class="story-stat">
+                <span class="label">Hype</span>
+                <strong id="hype-label">0</strong>
+              </div>
+              <div class="story-stat">
+                <span class="label">Cohesion</span>
+                <strong id="cohesion-label">0</strong>
+              </div>
+              <div class="story-stat">
+                <span class="label">Fatigue</span>
+                <strong id="fatigue-label">0</strong>
+              </div>
+            </div>
+
+            <div class="micro-meters">
+              <div>
+                <span>Ambition du club</span>
+                <div class="meter"><i id="ambition-meter"></i></div>
+              </div>
+              <div>
+                <span>Risque de craquage</span>
+                <div class="meter danger"><i id="stress-meter"></i></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel choices-panel">
+            <div class="panel-topline">
+              <div>
+                <p class="eyebrow">Cette semaine</p>
+                <h2>Tu fais quoi ?</h2>
+              </div>
+              <span class="badge muted">3 choix max</span>
+            </div>
+            <div id="choices-list" class="choices-list"></div>
+          </article>
+
+          <article class="panel journal-panel">
+            <div class="panel-topline">
+              <div>
+                <p class="eyebrow">Chronique</p>
+                <h2>Ce qu'il se passe</h2>
+              </div>
+            </div>
+            <div id="journal-list" class="journal-list"></div>
+          </article>
+        </aside>
       </section>
     </main>
 
-    <template id="commentary-item-template">
-      <div class="commentary-item">
-        <span class="minute"></span>
+    <template id="journal-item-template">
+      <article class="journal-item">
+        <span class="journal-kicker"></span>
         <p></p>
-      </div>
+      </article>
     </template>
 
     <script src="./game.js"></script>
